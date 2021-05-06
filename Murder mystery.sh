@@ -70,6 +70,3 @@ HomeAlone\=@=Killer,HomeAlone\=@=Victim.
 %To_Find_Result_Use_It------------------
 %murderer(Victim,Killer,BarMale,BarFemale,HomeAlone).
 
-
-
-
