@@ -1,0 +1,54 @@
+%------------------
+%Not Getting Banana
+%------------------
+%is AtDoor
+%is AtWindow
+%is AtFloor
+%is AtMiddleWithoutBox
+%is NotClimbOnTheBox
+%is NotGrapTheBanana
+%------------------
+%Getting Banana
+%------------------
+%is WalkForTheBox
+%is PushBoxOnMiddle
+%is MiddleOfTheFloor
+%is ClimbOnTheBox
+%is GrabTheBanana
+%------------------
+
+%state(Monkey, Climb, Banana).
+%state(isMiddleOfTheFloor, isClimbOnTheBox, isGrabTheBanana).
+%state(isMiddleOfTheFloor, isClimbOnTheBox, isNotGrabTheBanana).
+%state(isMiddleOfTheFloor, isNotClimbOnTheBox, isGrabTheBanana).
+%state(isNotMiddleOfTheFloor, isClimbOnTheBox, isNotGrabTheBanana).
+%state(isNotMiddleOfTheFloor, isNotClimbOnTheBox, isGrabTheBanana).
+%state(isMiddleOfTheFloor, isNotClimbOnTheBox, isNotGrabTheBanana).
+%state(isPushBoxOnMiddle, isNotClimbOnTheBox, isNotGrabTheBanana).
+%state(isAtWindow, isNotClimbOnTheBox, isNotGrabTheBanana).
+%state(isAtDoor, isNotClimbOnTheBox, isNotGrabTheBanana).
+%move(State1, Move, State2).
+
+%-------------------
+
+bingo(state(isMiddleOfTheFloor, isClimbOnTheBox, isGrabTheBanana)).
+
+%isGrabTheBanana
+move(state(isMiddleOfTheFloor, isClimbOnTheBox, isNotGrabTheBanana),
+	isGrabTheBanana,
+	state(isMiddleOfTheFloor, isClimbOnTheBox, isGrabTheBanana)
+).
+
+%isClimbOnTheBox
+move(state(isPushBoxOnMiddle, isNotClimbOnTheBox, isNotGrabTheBanana),
+	isClimbOnTheBox,
+	state(isMiddleOfTheFloor, isClimbOnTheBox, isNotGrabTheBanana)
+).
+
+%canWalkForTheBox
+move(state(isAtDoor, isNotClimbOnTheBox, isNotGrabTheBanana),
+	canWalkForTheBox,
+	state(isPushBoxOnMiddle, isNotClimbOnTheBox, isNotGrabTheBanana)
+).
+
+bingo(State1):- move(State1, Move, State2), bingo(State2).
