@@ -28,7 +28,7 @@
 %state(isAtWindow, isNotClimbOnTheBox, isNotGrabTheBanana).
 %state(isAtDoor, isNotClimbOnTheBox, isNotGrabTheBanana).
 %move(State1, Move, State2).
-
+ 
 %-------------------
 
 bingo(state(isMiddleOfTheFloor, isClimbOnTheBox, isGrabTheBanana)).
