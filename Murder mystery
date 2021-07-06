@@ -18,7 +18,7 @@ female(daughter).
 %Total_twins----------------
 twins(brother,alice).
 twins(son,daughter).
-
+ 
 %Total_Child----------------
 child(son).
 child(daughter).
